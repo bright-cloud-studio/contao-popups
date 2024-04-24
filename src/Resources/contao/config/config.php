@@ -8,12 +8,7 @@
 * @see	       https://github.com/bright-cloud-studio/contao-popups
 */
 
-//use Bcs\PopupBundle\FormRecaptcha;
-
-// Setup our Form field
-//array_insert($GLOBALS['TL_FFL']['recaptcha'], -1, FormRecaptcha::class);
-
-// Setup our background content element
-//array_insert($GLOBALS['TL_CTE']['miscellaneous'], 0, [
-//    'backgroundrecaptcha' => Bcs\ElementRecaptcha::class,
-//]);
+/**
+ * Hooks
+ */
+$GLOBALS['TL_HOOKS']['generatePage'][] 		= array('ZyppyPopup\Frontend\Page', 'generatePage');
