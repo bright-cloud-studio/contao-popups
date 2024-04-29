@@ -18,7 +18,7 @@ use Contao\Backend as Contao_Backend;
 use Contao\DataContainer;
 use Contao\LayoutModel;
 use Contao\PageModel;
-use Contao]StringUtil;
+use Contao\StringUtil;
 
 
 class Article extends Contao_Backend
