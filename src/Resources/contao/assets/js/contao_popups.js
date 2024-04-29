@@ -22,8 +22,7 @@
 			}
 			return null;
 		}
-
-        /* This function is at the end */
+		
 		return this.each(function() {
 			if ($(this).is('.popup_frame')) {
 				$(this).css('display', 'none');
@@ -83,8 +82,7 @@
 									}
 								});
 							}
-
-                            /* This is the close function */
+							
 							if (close_popup) {
 								popup.css("display", "none").removeClass('popup_open').addClass('popup_closed');
 								showPopup = true;
