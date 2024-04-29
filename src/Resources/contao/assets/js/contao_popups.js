@@ -83,7 +83,8 @@
 									}
 								});
 							}
-							
+
+                            /* This is the close function */
 							if (close_popup) {
 								popup.css("display", "none").removeClass('popup_open').addClass('popup_closed');
 								showPopup = true;
