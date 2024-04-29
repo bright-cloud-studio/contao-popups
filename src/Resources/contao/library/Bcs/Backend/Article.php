@@ -18,6 +18,7 @@ use Contao\Backend as Contao_Backend;
 use Contao\DataContainer;
 use Contao\LayoutModel;
 use Contao\PageModel;
+use Contao]StringUtil;
 
 
 class Article extends Contao_Backend
@@ -93,7 +94,7 @@ class Article extends Contao_Backend
 					continue;
 				}
 
-				$arrModules = \StringUtil::deserialize($objLayout->modules, true);
+				$arrModules = StringUtil::deserialize($objLayout->modules, true);
 
 				if (empty($arrModules) || !\is_array($arrModules))
 				{
@@ -120,7 +121,7 @@ class Article extends Contao_Backend
 
 			while ($objLayout->next())
 			{
-				$arrCustom = \StringUtil::deserialize($objLayout->sections, true);
+				$arrCustom = StringUtil::deserialize($objLayout->sections, true);
 
 				// Add the custom layout sections
 				if (!empty($arrCustom) && \is_array($arrCustom))
