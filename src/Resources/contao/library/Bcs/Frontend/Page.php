@@ -66,7 +66,7 @@ class Page extends Contao_Frontend
 				// Disabled module
 				
                 /* if (!BE_USER_LOGGED_IN && (!array_key_exists('enable', $arrModule) || !$arrModule['enable'])) */
-                if (!array_key_exists('enable', $arrModule) || !$arrModule['enable'))
+                if (!array_key_exists('enable', $arrModule) || !$arrModule['enable'])
 				{
 					continue;
 				}
