@@ -22,7 +22,8 @@
 			}
 			return null;
 		}
-		
+
+        /* This function is at the end */
 		return this.each(function() {
 			if ($(this).is('.popup_frame')) {
 				$(this).css('display', 'none');
