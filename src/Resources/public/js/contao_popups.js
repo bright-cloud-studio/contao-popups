@@ -1,7 +1,9 @@
 (function($) {
 		
+	// Function to initialize our Contao Popup
 	$.fn.contaoPopup = function() {
 		
+		// Create a cookie to track lifetime of the Contao Popup
 		var createCookie = function(name,value,days) {
 			if (days) {
 				var date = new Date();
@@ -12,6 +14,7 @@
 			document.cookie = name+"="+value+expires+"; path=/";
 		}
 		
+		// Read the cookie we created to track the lifetime
 		var readCookie = function (name) {
 			var nameEQ = name + "=";
 			var ca = document.cookie.split(';');
@@ -23,10 +26,16 @@
 			return null;
 		}
 		
+		// Modify our popups then return the updated version to the page
 		return this.each(function() {
+		    
+		    // if $(this) is our popup's parent wrapper
 			if ($(this).is('.popup_frame')) {
+			    
+			    // Hide by default
 				$(this).css('display', 'none');
 				
+				// Locally save variables for manipulation
 				var popup = $(this);
 				var puid = $(this).attr('puid');
 				var popup_delay = $(this).attr('pdelay');					// Milliseconds
@@ -40,14 +49,18 @@
 				var scroll_trip = false;
 				var showPopup = true;
 				
+				// If there is no delay added in the settings page, set a default so we have at least some value here
 				if (popup_delay == '') {
 					popup_delay = -1;
 				} else {
+				    // If there is a delay set, parse as an int and apply it
 					popup_delay = parseInt(popup_delay);
 				}
 				
+				// Function to activate the popup
 				var activatePopup = function () {
 
+                    
 					clearTimeout(popup_timer);
 					var timeNow = Math.floor(Date.now() / 1000);
 					
