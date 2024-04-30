@@ -25,6 +25,9 @@ class Module extends Contao_Backend
 	
 	public function generateModuleUuid($varValue, DataContainer $dc)
 	{
+	    
+	    return "123456";
+	    
 		if ($dc->activeRecord->popup) {
 			$autoUuid = false;
 	
