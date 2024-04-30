@@ -84,12 +84,13 @@ class Page extends Contao_Frontend
                     
 					if ($arrModule['mod']->popup) {
 						if ($arrModule['mod']->popupAccept) {
+                            $GLOBALS['TL_JAVASCRIPT'][] = 'bundles/bcspopup/js/contao_popups.js';
 							//if (!in_array('bundles/BcsPopupBundle/assets/js/contao-popups.js', $GLOBALS['TL_JAVASCRIPT'])) { 
 							//	$GLOBALS['TL_JAVASCRIPT'][] = 'bundles/BcsPopupBundle/assets/js/contao-popups.js';
 							//}
 						} else {
 
-                            $GLOBALS['TL_JAVASCRIPT'][] = 'bundles/bcspopup/js/contao_popups.js';
+                            $GLOBALS['TL_JAVASCRIPT'][] = 'bundles/bcspopup/js/contao_popups_accept.js';
                             
 							//if (!in_array('bundles/BcsPopupBundle/assets/js/contao-popups.js', $GLOBALS['TL_JAVASCRIPT'])) { 
 							//	$GLOBALS['TL_JAVASCRIPT'][] = 'bundles/BcsPopupBundle/assets/js/contao-popups.js';
