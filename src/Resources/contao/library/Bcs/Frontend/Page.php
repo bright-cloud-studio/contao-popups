@@ -82,12 +82,12 @@ class Page extends Contao_Frontend
 				{
 					if ($arrModule['mod']->popup) {
 						if ($arrModule['mod']->popupAccept) {
-							if (!in_array('system/modules/zyppy_popup/assets/js/popup_accept.js', $GLOBALS['TL_JAVASCRIPT'])) { 
-								$GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/zyppy_popup/assets/js/popup_accept.js';
+							if (!in_array('bundles/BcsPopupBundle/assets/js/contao-popups.js', $GLOBALS['TL_JAVASCRIPT'])) { 
+								$GLOBALS['TL_JAVASCRIPT'][] = 'bundles/BcsPopupBundle/assets/js/contao-popups.js';
 							}
 						} else {
-							if (!in_array('system/modules/zyppy_popup/assets/js/popup.js', $GLOBALS['TL_JAVASCRIPT'])) { 
-								$GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/zyppy_popup/assets/js/popup.js';
+							if (!in_array('bundles/BcsPopupBundle/assets/js/contao-popups.js', $GLOBALS['TL_JAVASCRIPT'])) { 
+								$GLOBALS['TL_JAVASCRIPT'][] = 'bundles/BcsPopupBundle/assets/js/contao-popups.js';
 							}
 						}
 						
