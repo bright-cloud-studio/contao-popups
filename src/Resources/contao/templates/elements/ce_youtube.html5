@@ -4,7 +4,7 @@
 
   <h1>USING 'bright-cloud-studio/contao-popups' TEMPLATE!!</h1>
 
-  <figure class="video_container">
+  <figure class="test123 video_container">
     <?php if ($this->aspect): ?>
       <div class="responsive ratio-<?= $this->aspect ?>">
     <?php endif; ?>
