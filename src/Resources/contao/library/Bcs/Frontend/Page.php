@@ -80,15 +80,20 @@ class Page extends Contao_Frontend
 				// Filter active sections (see #3273)
 				if ($arrModule['col'] == 'popup')
 				{
+                    
+                    
 					if ($arrModule['mod']->popup) {
 						if ($arrModule['mod']->popupAccept) {
-							if (!in_array('bundles/BcsPopupBundle/assets/js/contao-popups.js', $GLOBALS['TL_JAVASCRIPT'])) { 
-								$GLOBALS['TL_JAVASCRIPT'][] = 'bundles/BcsPopupBundle/assets/js/contao-popups.js';
-							}
+							//if (!in_array('bundles/BcsPopupBundle/assets/js/contao-popups.js', $GLOBALS['TL_JAVASCRIPT'])) { 
+							//	$GLOBALS['TL_JAVASCRIPT'][] = 'bundles/BcsPopupBundle/assets/js/contao-popups.js';
+							//}
 						} else {
-							if (!in_array('bundles/BcsPopupBundle/assets/js/contao-popups.js', $GLOBALS['TL_JAVASCRIPT'])) { 
-								$GLOBALS['TL_JAVASCRIPT'][] = 'bundles/BcsPopupBundle/assets/js/contao-popups.js';
-							}
+
+                            $GLOBALS['TL_JAVASCRIPT'][] = 'bundles/bcspopup/js/contao_popups.js';
+                            
+							//if (!in_array('bundles/BcsPopupBundle/assets/js/contao-popups.js', $GLOBALS['TL_JAVASCRIPT'])) { 
+							//	$GLOBALS['TL_JAVASCRIPT'][] = 'bundles/BcsPopupBundle/assets/js/contao-popups.js';
+							//}
 						}
 						
 						$objPopupWrapperTemplate = new FrontendTemplate('fe_popup_wrapper');
