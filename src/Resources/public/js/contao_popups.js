@@ -43,7 +43,8 @@
 				var scroll_trigger = parseInt($(this).attr('strigger'));	// Pixels
 				var fade_duration = parseInt($(this).attr('fduration'));	// Milliseconds
 				var popup_trigger = $(this).attr('ptrigger');				// CSS Selector
-
+				
+                // Create some bools
 				var popup_timer = false;
 				var scroll_start = false;
 				var scroll_trip = false;
@@ -60,10 +61,11 @@
 				// Function to activate the popup
 				var activatePopup = function () {
 
-                    
+                    // Reset the timeout, as we are just starting out
 					clearTimeout(popup_timer);
 					var timeNow = Math.floor(Date.now() / 1000);
 					
+					// If there is a "Reshow Delay" set
 					if (reshow_delay) {
 						var lastShown = parseInt(readCookie(puid + "_showTime"));
 						var threshold = (parseInt(lastShown) + (reshow_delay * 60));
@@ -71,16 +73,23 @@
 							showPopup = false;
 						}
 					}
-									
+					
+					// If we need to show the popup	
 					if (showPopup) {
+					    // Set to false, we only want to do this once
 						showPopup = false;
+						
+						// If we have a "Fade Duration" set
 						if (fade_duration > 0) {
 							popup.css({"opacity": "0", "display": "initial"}).fadeTo(fade_duration, 1).removeClass('popup_closed').addClass('popup_open');
 						} else {
 							popup.css("display", "block").removeClass('popup_closed').addClass('popup_open');
 						}
+						
+						// Create our cookie to track the showtime of the popup
 						createCookie(puid + "_showTime", timeNow, (Math.floor(reshow_delay / 1440) + 1));
 						
+						// Setup a click event on the body, which will close the popup when clicking outside of it
 						$("body").on('click', function(e) {
 							var close_popup = true;
 							if ($(e.target).is(popup_trigger)) {
@@ -96,22 +105,26 @@
 								});
 							}
 							
+							// If we need to close the popup
 							if (close_popup) {
 								popup.css("display", "none").removeClass('popup_open').addClass('popup_closed');
 								showPopup = true;
 							}
 						});
 						
+						// Setup a click event for the close button
 						popup.find(".close").click(function(el){
 							el.preventDefault();
 							popup.css("display", "none").removeClass('popup_open').addClass('popup_closed');
 							showPopup = true;
 						})
 						
+						// Zyppy Search: clear the results
 						popup.find('div.mod_zyppy_search div.results.popup_clear').empty();
 					}
 				};
 			
+			    // If we have a "Scroll Trigger" set, which will show the popup when scrolling X pixels down
 				if (scroll_trigger) {
 					scroll_start = $(window).scrollTop();
 					scroll_trip = scroll_start + scroll_trigger;
@@ -122,24 +135,29 @@
 					});
 				}
 				
+				// If we have a "Popup Trigger" set, a css selector that when clicked will trigger the popup
 				if (popup_trigger) {
 					$(popup_trigger).click(function() {
 						activatePopup();
 					});
 				}
 				
+				// If we have a "Popup Delay" set
 				if (popup_delay > 0) {
 					popup_timer = setTimeout(activatePopup, popup_delay);
 				} else if (popup_delay == 0) {
 					activatePopup();
 				}
 				
+				// Cleaning up after init
 				$(this).removeClass('pre_init').addClass('post_init');
 			}
 		});
 	};		
 		
+    // When the page is fullyl loaded
 	$(document).ready(function() {
+	    // Let's kick this whole thing off
 		$('.popup_frame.pre_init').contaoPopup();
 	});
 })(jQuery);
