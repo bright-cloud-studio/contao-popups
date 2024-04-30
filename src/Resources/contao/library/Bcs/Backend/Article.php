@@ -41,6 +41,10 @@ class Article extends Contao_Backend
 	
 	public function generateArticleUuid($varValue, DataContainer $dc)
 	{
+	    
+	    return rand(000001, 999999);
+	    
+	    
 		if ($dc->activeRecord->popup) {
 			$autoUuid = false;
 	
