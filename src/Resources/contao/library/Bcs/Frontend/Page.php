@@ -24,7 +24,7 @@ use Contao\System;
 
 class Page extends Contao_Frontend
 {
-	
+    
 	public function generatePage(&$objPageModel, $objLayout, &$objPage)
 	{
 		
@@ -158,19 +158,4 @@ class Page extends Contao_Frontend
 		return $objLayout;
 	}
 
-
-
-
-
-
-    public function getContentElement($contentModel, $buffer, $element)
-    {
-        echo "Hey Now!";
-        die();
-    }
-
-
-
-    
-	
 }
