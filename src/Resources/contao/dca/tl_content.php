@@ -1,12 +1,6 @@
 <?php
 
 /** Palettes */
-
-$GLOBALS['TL_DCA']['tl_content']['palettes']['youtubepopup'] = '{type_legend},type,headline;{source_legend},youtube;{player_legend},youtubeOptions,playerSize,playerAspect,playerCaption,playerStart,playerStop;{splash_legend},splashImage;{template_legend:hide},customTpl;{protected_legend:hide},protected;{expert_legend:hide},cssID;{invisible_legend:hide},invisible,start,stop';
-		
-
-
-
 foreach($GLOBALS['TL_DCA']['tl_content']['palettes'] as $key => $value) {
 	$GLOBALS['TL_DCA']['tl_content']['palettes'][$key] = str_replace(',type', ',type;{popup_legend},popup', $value);
 }	
@@ -16,6 +10,12 @@ $GLOBALS['TL_DCA']['tl_content']['palettes']['__selector__'][] = 'popupAccept';
 
 $GLOBALS['TL_DCA']['tl_content']['subpalettes']['popup'] = 'popupUuid,popupClass,popupDelay,popupReshowDelay,popupScrollTrigger,popupFadeDuration,popupTrigger,popupAddClose,popupAccept';
 $GLOBALS['TL_DCA']['tl_content']['subpalettes']['popupAccept'] 	= 'popupRejectUrl';
+
+
+/* Modify the existing youtube palette by adding our submit field */
+$GLOBALS['TL_DCA']['tl_content']['palettes']['youtube'] = str_replace('youtube;', 'youtube,popupSubmit;', $GLOBALS['TL_DCA']['tl_content']['palettes']['youtube']);
+
+
 
 /**
  * Fields
