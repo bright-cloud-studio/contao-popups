@@ -22,7 +22,13 @@ use Contao\StringUtil;
 
 class Content extends Contao_Backend
 {
-	
+
+    public function getContentElementHook, $content)
+	{
+        return $content;
+    }
+
+    
 	public function generateContentUuid($varValue, DataContainer $dc)
 	{
 	    
