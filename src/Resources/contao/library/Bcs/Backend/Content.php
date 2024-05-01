@@ -25,6 +25,12 @@ class Content extends Contao_Backend
 
     public function getContentElementHook($row, $content)
 	{
+	    
+	    if($row->type == 'youtube') {
+            $GLOBALS['TL_BODY'][] = '<script src="/bundles/bcspopup/js/fresco.min.js"></script>';
+            $GLOBALS['TL_CSS'][] = '/bundles/bcspopup/css/fresco.css';
+	    }
+	    
         return $content;
     }
 
