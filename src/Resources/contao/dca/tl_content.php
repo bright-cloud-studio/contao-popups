@@ -123,3 +123,12 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['popupRejectUrl'] = array(
 	'eval'                    => array('mandatory'=>true, 'rgxp'=>'url', 'decodeEntities'=>true, 'maxlength'=>255, 'dcaPicker'=>true, 'addWizardClass'=>false, 'tl_class'=>'long clr'),
 	'sql'                     => "varchar(255) NOT NULL default ''"
 );
+
+$GLOBALS['TL_DCA']['tl_content']['fields']['popupSubmit'] = array
+(
+	'label'                   => &$GLOBALS['TL_LANG']['tl_content']['popupSubmit'],
+	'search'                  => true,
+	'inputType'               => 'text',
+	'eval'                    => array('tl_class'=>'w50'),
+	'sql'                     => "varchar(255) NOT NULL default ''"
+);
