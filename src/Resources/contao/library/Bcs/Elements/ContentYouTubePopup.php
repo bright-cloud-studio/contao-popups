@@ -10,9 +10,11 @@ class ContentYouTubePopup extends \Contao\ContentYouTube
         // perform our normal compilation functions
         parent::compile();
 
-        echo "POW!";
-        die();
-        // This is where our custom code will go
+        if ($this->popup) {
+            echo "WE GOT US A POPUP HERE!";
+            die();
+        }
+        
     }
   
 }
