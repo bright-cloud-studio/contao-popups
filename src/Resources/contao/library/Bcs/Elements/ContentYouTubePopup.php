@@ -10,9 +10,11 @@ class ContentYouTubePopup extends \Contao\ContentYouTube
         // perform our normal compilation functions
         parent::compile();
 
-        if ($this->popup) {
-            echo "WE GOT US A POPUP HERE!";
-            die();
+        if ($this->popupTrigger != '') {
+            
+            $GLOBALS['TL_BODY'][] = '<script src="/bundles/bcspopup/js/fresco.min.js"></script>';
+            $GLOBALS['TL_CSS'][] = '/bundles/bcspopup/css/fresco.css';
+            
         }
         
     }
