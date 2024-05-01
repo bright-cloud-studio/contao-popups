@@ -12,3 +12,6 @@
  * Hooks
  */
 $GLOBALS['TL_HOOKS']['generatePage'][] 		 = array('ZyppyPopup\Frontend\Page', 'generatePage');
+
+
+$GLOBALS['TL_CTE']['media']['youtube'] = 'Bcs\Elements\ContentYouTubePopup';
