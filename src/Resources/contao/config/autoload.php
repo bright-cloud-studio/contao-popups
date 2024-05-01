@@ -31,5 +31,5 @@ TemplateLoader::addFiles(array
 (
     'fe_popup_wrapper' 					=> 'system/modules/zyppy_popup/templates/frontend',
 	'mod_article' 						=> 'system/modules/zyppy_popup/templates/modules',
-    'youtube' 				            => 'system/modules/zyppy_popup/templates/content_element/popup',
+    'youtube_test' 				            => 'system/modules/zyppy_popup/templates/content_element',
 ));
