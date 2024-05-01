@@ -157,5 +157,20 @@ class Page extends Contao_Frontend
 
 		return $objLayout;
 	}
+
+
+
+
+
+
+    public function generatePage($contentModel, $buffer, $element)
+    {
+        echo "Hey Now!";
+        die();
+    }
+
+
+
+    
 	
 }
