@@ -3,7 +3,7 @@
 namespace Bcs\Elements;
 
 
-class ContentYouTubePopup extends \Contao\ContentYouTube
+class ContentYouTube extends \Contao\ContentYouTube
 {
     protected function compile()
     {
