@@ -163,7 +163,7 @@ class Page extends Contao_Frontend
 
 
 
-    public function generatePage($contentModel, $buffer, $element)
+    public function getContentElement($contentModel, $buffer, $element)
     {
         echo "Hey Now!";
         die();
