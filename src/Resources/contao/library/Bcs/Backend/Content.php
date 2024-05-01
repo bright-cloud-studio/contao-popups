@@ -23,7 +23,7 @@ use Contao\StringUtil;
 class Content extends Contao_Backend
 {
 
-    public function getContentElementHook, $content)
+    public function getContentElementHook($row, $content)
 	{
         return $content;
     }
