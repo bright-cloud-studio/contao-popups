@@ -42,9 +42,6 @@ class Article extends Contao_Backend
 	public function generateArticleUuid($varValue, DataContainer $dc)
 	{
 	    
-	    return rand(000001, 999999);
-	    
-	    
 		if ($dc->activeRecord->popup) {
 			$autoUuid = false;
 	
@@ -55,9 +52,12 @@ class Article extends Contao_Backend
 				$varValue = uniqid('p');
 			}
 	
+			//$objUuid = $this->Database->prepare("SELECT id FROM tl_article WHERE popupUuid=?")
+			//						   ->execute($dc->id, $varValue);
+									   
 			$objUuid = $this->Database->prepare("SELECT id FROM tl_article WHERE popupUuid=?")
-									   ->execute($dc->id, $varValue);
-	
+									   ->execute($dc->id);
+            
 			if ($objUuid->numRows > 1)
 			{
 				$varValue .= '-' . $dc->id;
