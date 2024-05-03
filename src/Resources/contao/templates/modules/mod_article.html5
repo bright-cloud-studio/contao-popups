@@ -61,5 +61,11 @@
       <?php $this->endblock(); ?>
     <?php endif; ?>
   </div>
+  
+<?php if ($this->popup):  ?>
+  </div>
+  </div>
+<?php endif; ?>	  
+
 
 <?php endif; ?>
