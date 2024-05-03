@@ -26,8 +26,6 @@ class Module extends Contao_Backend
 	public function generateModuleUuid($varValue, DataContainer $dc)
 	{
 	    
-	    return "123456";
-	    
 		if ($dc->activeRecord->popup) {
 			$autoUuid = false;
 	
@@ -38,8 +36,11 @@ class Module extends Contao_Backend
 				$varValue = uniqid('p');
 			}
 	
+			//$objUuid = $this->Database->prepare("SELECT id FROM tl_module WHERE popupUuid=?")
+			//						   ->execute($dc->id, $varValue);
+									   
 			$objUuid = $this->Database->prepare("SELECT id FROM tl_module WHERE popupUuid=?")
-									   ->execute($dc->id, $varValue);
+								      ->execute($dc->id);
 	
 			if ($objUuid->numRows > 1)
 			{
