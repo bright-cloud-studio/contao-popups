@@ -9,8 +9,6 @@
  * @link       https://andrewstevens.consulting
  */
 
- 
- 
 namespace ZyppyPopup\Frontend;
 
 use Contao\Frontend as Contao_Frontend;
@@ -20,7 +18,6 @@ use Contao\ModuleModel;
 use Contao\PageRegular;
 use Contao\StringUtil;
 use Contao\System;
-
 
 class Page extends Contao_Frontend
 {
@@ -85,16 +82,8 @@ class Page extends Contao_Frontend
 					if ($arrModule['mod']->popup) {
 						if ($arrModule['mod']->popupAccept) {
                             $GLOBALS['TL_JAVASCRIPT'][] = 'bundles/bcspopup/js/contao_popups_accept.js';
-							//if (!in_array('bundles/BcsPopupBundle/assets/js/contao-popups.js', $GLOBALS['TL_JAVASCRIPT'])) { 
-							//	$GLOBALS['TL_JAVASCRIPT'][] = 'bundles/BcsPopupBundle/assets/js/contao-popups.js';
-							//}
 						} else {
-
                             $GLOBALS['TL_JAVASCRIPT'][] = 'bundles/bcspopup/js/contao_popups.js';
-                            
-							//if (!in_array('bundles/BcsPopupBundle/assets/js/contao-popups.js', $GLOBALS['TL_JAVASCRIPT'])) { 
-							//	$GLOBALS['TL_JAVASCRIPT'][] = 'bundles/BcsPopupBundle/assets/js/contao-popups.js';
-							//}
 						}
 						
 						$objPopupWrapperTemplate = new FrontendTemplate('fe_popup_wrapper');
