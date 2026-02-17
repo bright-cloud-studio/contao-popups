@@ -107,6 +107,9 @@
 							
 							// If we need to close the popup
 							if (close_popup) {
+							    console.log("CLOSE EVENT");
+							    // Reload iframes to stop video playback, if there is any
+							    popup.find('iframe').get(0).contentWindow.location.reload();
 								popup.css("display", "none").removeClass('popup_open').addClass('popup_closed');
 								showPopup = true;
 							}
@@ -114,6 +117,10 @@
 						
 						// Setup a click event for the close button
 						popup.find(".close").click(function(el){
+						    
+						    // Reload iframes to stop video playback, if there is any
+                            popup.find('iframe').get(0).contentWindow.location.reload();
+
 							el.preventDefault();
 							popup.css("display", "none").removeClass('popup_open').addClass('popup_closed');
 							showPopup = true;
